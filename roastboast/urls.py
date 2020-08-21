@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from homepage import views
+
 urlpatterns = [
+    path('', views.index, name="homepage"),
+    path('make_post_view/', views.make_post_view),
+    path('sorted_by_vote_view/', views.sorted_by_vote_view),
+    path('up_vote_view/<int:up_vote_id>/', views.up_vote_view),
+    path('down_vote_view/<int:down_vote_id>/', views.down_vote_view),
+    path('roast_view/', views.roast_view, name="roast"),
+    path('boast_view/', views.boast_view, name="boast"),
+    # path('delete_post_view/<str:post_id>/', views.delete_post_view),
     path('admin/', admin.site.urls),
 ]

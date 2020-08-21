@@ -1,0 +1,21 @@
+<a href="/">Home</a>
+<a href="sorted_by_vote_view">sorted_by_vote_views</a>
+<!--<a href="roast_view/">roast view</a>-->
+<!--<a href="/boast_view/roast_view/">roast view</a>-->
+<div>
+    {% for boast in posts %}
+    <ul>
+        {% if boast.choices %}
+        <h2>Boasts</h2>
+        {% endif %}
+        {{ boast.votes }}
+        <br>
+        {{ boast.body }}
+        <br>
+        <br>
+        <a href="/up_vote_view/{{boast.id}}/">upvote</a>
+        <a href="/down_vote_view/{{boast.id}}/">downvote</a>
+        {{ boast.post_date }}
+    </ul>
+    {% endfor %}
+</div>
